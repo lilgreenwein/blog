@@ -1,3 +1,10 @@
+---
+layout: post
+title:  "Disabling SSLv2, SSLv3 and TLS 1.0"
+date:   2017-01-25 13:38:23 -0700
+categories: rsyslog
+---
+
 If you're running rsyslog and want to run it securely, you're going to want to disable SSLv2 and SSLv3.  If you're running rsyslog in a PCI environment you'll HAVE to.  Given recent PCI standards you'll also have to disable TLS 1.0 (and likely 1.1 in the near future).
 
 First thing you'll need to do is familiarize yourself with GnuTLS priority strings, and what string fits your needs.  Go here: GnuTLS Priority Strings for a full read on priority strings.
