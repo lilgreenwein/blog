@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.4.3">Jekyll</generator><link href="http://lilgreenwein.github.io/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="http://lilgreenwein.github.io/blog/" rel="alternate" type="text/html" /><updated>2017-06-15T13:51:15-07:00</updated><id>http://lilgreenwein.github.io/blog/</id><title type="html">lilgreenwein</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
+</subtitle><entry><title type="html">Welcome to Jekyll!</title><link href="http://lilgreenwein.github.io/blog/jekyll/update/2017/06/15/welcome-to-jekyll.html" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2017-06-15T13:38:23-07:00</published><updated>2017-06-15T13:38:23-07:00</updated><id>http://lilgreenwein.github.io/blog/jekyll/update/2017/06/15/welcome-to-jekyll</id><content type="html" xml:base="http://lilgreenwein.github.io/blog/jekyll/update/2017/06/15/welcome-to-jekyll.html">&lt;p&gt;You’ll find this post in your &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
+
+&lt;p&gt;To add new posts, simply add a file in the &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code class=&quot;highlighter-rouge&quot;&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
+
+&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Tom'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints 'Hi, Tom' to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Check out the &lt;a href=&quot;https://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;</content><author><name></name></author><summary type="html">You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyll serve, which launches a web server and auto-regenerates your site when a file is updated.</summary></entry><entry><title type="html">Disabling Sslv2 Sslv3 And Tls10</title><link href="http://lilgreenwein.github.io/blog/2017/01/27/disabling-sslv2-sslv3-and-tls10.html" rel="alternate" type="text/html" title="Disabling Sslv2 Sslv3 And Tls10" /><published>2017-01-27T00:00:00-08:00</published><updated>2017-01-27T00:00:00-08:00</updated><id>http://lilgreenwein.github.io/blog/2017/01/27/disabling-sslv2-sslv3-and-tls10</id><content type="html" xml:base="http://lilgreenwein.github.io/blog/2017/01/27/disabling-sslv2-sslv3-and-tls10.html">&lt;p&gt;If you’re running rsyslog and want to run it securely, you’re going to want to disable SSLv2 and SSLv3.  If you’re running rsyslog in a PCI environment you’ll HAVE to.  Given recent PCI standards you’ll also have to disable TLS 1.0 (and likely 1.1 in the near future).&lt;/p&gt;
+
+&lt;p&gt;First thing you’ll need to do is familiarize yourself with GnuTLS priority strings, and what string fits your needs.  Go here: GnuTLS Priority Strings for a full read on priority strings.&lt;/p&gt;
+
+&lt;p&gt;For example purposes here I’m using:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;SECURE192:-VERS-ALL:+VERS-TLS1.2
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Which enables all 192-bit ciphers, and disables all versions of TLS except 1.2.&lt;/p&gt;
+
+&lt;p&gt;If you’re using imrelp, you’re in luck.  The imrelp input has a tls.prioritystring setting so just set it to whatever fits your needs:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;input(
+       type = &quot;imrelp&quot;
+       port = 2514
+       ruleset = &quot;relp_messages&quot;
+       tls = &quot;on&quot;
+       tls.prioritystring = &quot;SECURE192:-VERS-ALL:+VERS-TLS1.2&quot;
+       tls.authMode = &quot;name&quot;
+       tls.permittedPeer = [ &quot;*.mycompany.com&quot;, &quot;*.int.mycompany.com&quot;]
+)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;You’re done.&lt;/p&gt;
+
+&lt;p&gt;Sadly, imtcp does not include any such setting.  To enforce a priority string on imtcp you’ll have to set it at what rsyslog calls the StreamDriver level, namely gtls.  In order to do this you will to build GnuTLS from source with the following flags passed to the configure script:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;--disable-ssl3-support --disable-ssl2-support --with-default-priority-string=&quot;SECURE192:-VERS-ALL:+VERS-TLS1.2&quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Then do the usual make, make install and the new gnutls libs will operate based on the priority string you specified.  You’ll have to install these updated librarys to all rsyslog hosts you want to lock down.  Or if you’re like me and need to keep things compartmentalized for easy distribution and scaling, you can just add all &lt;code class=&quot;highlighter-rouge&quot;&gt;/usr/lib64/libgnutls*&lt;/code&gt; libraries to your rsyslog package and update your &lt;code class=&quot;highlighter-rouge&quot;&gt;LD_LIBRARY_PATH&lt;/code&gt; so that they’re loaded first.&lt;/p&gt;
+
+&lt;p&gt;If you use both secure imtcp and imrelp, the good news is that this method of recompiling GnuTLS will apply to both.  There’s no need to specify a &lt;code class=&quot;highlighter-rouge&quot;&gt;tls.prioritystring&lt;/code&gt; in your imrelp input.&lt;/p&gt;
+
+&lt;p&gt;Once you’ve updated and restarted rsyslog you can verify everything is working using &lt;code class=&quot;highlighter-rouge&quot;&gt;openssl s_client&lt;/code&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;openssl s_client -connect localhost:2514 -tls1_1
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;If your priority string is set to enable TLS1.1 it should handshake and you should get a server certificate back.  If not, you’ll get back a handshake error.&lt;/p&gt;
+
+&lt;p&gt;To test against other protocols / versions:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;ssl2&lt;/code&gt; - just use SSLv2&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;ssl3&lt;/code&gt; - just use SSLv3&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;tls1_2&lt;/code&gt; - just use TLSv1.2&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;tls1_1&lt;/code&gt; - just use TLSv1.1&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;tls1&lt;/code&gt; - just use TLSv1.0&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;If you get handshake errors on versions you’d expect to connect on, it’s likely a bad priority string setting.  Unfortunately when you compile GnuTLS there’s no test run that determines if your priority string is formatted correctly and is valid.  There’s simply too many options and permutations to a priority string.  So you may have to go through the compilation processes several times before you get it right.  Once you get a priority string that works, do yourself a favor and note it down somewhere.  It will come up again.&lt;/p&gt;</content><author><name></name></author><summary type="html">If you’re running rsyslog and want to run it securely, you’re going to want to disable SSLv2 and SSLv3.  If you’re running rsyslog in a PCI environment you’ll HAVE to.  Given recent PCI standards you’ll also have to disable TLS 1.0 (and likely 1.1 in the near future).</summary></entry></feed>
